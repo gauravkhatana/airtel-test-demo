@@ -800,6 +800,20 @@ ul {
                 }
             }
 
+            .detailed-view-table{
+                #nav-map{
+                    position: relative;
+                }
+                svg{
+                    path{
+                        fill:#354ACB
+                    }
+                }
+                .dropdown-menu{
+                    right:62% !important;
+                }
+            }
+
             .end {
 
                 svg {
@@ -1054,6 +1068,12 @@ ul {
                 color: #354ACB;
             }
         }
+
+        .search {
+            width: 40%;
+            border: solid 1px #1212121b;
+        }
+    
     }
 
 }
