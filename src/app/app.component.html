@@ -99,16 +99,16 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="search-wrapper">
         <div class="search" [class.border-plane]="searchActive">
           <!-- <img src="assets/bookmark.svg" alt=""> -->
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 17" fill="none">
             <path
               d="M14 14.5L10.0001 10.5M11.3333 7.16667C11.3333 9.744 9.244 11.8333 6.66667 11.8333C4.08934 11.8333 2 9.744 2 7.16667C2 4.58934 4.08934 2.5 6.66667 2.5C9.244 2.5 11.3333 4.58934 11.3333 7.16667Z"
-              stroke="#8B8A8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              stroke="#354ACB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
 
-          <input type="text" #input [(ngModel)]="globalSearchInput" placeholder="search" />
+          <input type="text" #input [(ngModel)]="globalSearchInput" placeholder="Search DSL or OLT" />
 
           <!-- <input type="text" #input [(ngModel)]="searchInput" placeholder="search" 
         (focus)="searchActive = true" (blur)="searchActive = false" (keyup)="filterSearch(input.value)"
@@ -557,9 +557,8 @@
             <div class="detailed-view">
 
              
-              <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home-tab-pane1" role="tabpanel" aria-labelledby="home-tab"
-                  tabindex="0">
+              
+                <div class="detailed-view-map" [class.d-none]="isTableVisible" [class.d-block]="!isTableVisible">
                   <div class="map-box">
                     <div class="offcanvas offcanvas-start theme-panel" tabindex="-1" id="offcanvasExample2"
                       aria-labelledby="offcanvasExampleLabel">
@@ -739,11 +738,8 @@
 
                       <div class="switch">
                         <div class="buttons">
-                          <ul type="none"  class="d-flex ms-0 mb-0 p-0" id="myTab" role="tablist">
-                            <li >
-                              <button class="nav-link active" data-bs-toggle="tab"
-                                data-bs-target="#home-tab-pane1" type="button" role="tab" aria-controls="home-tab-pane"
-                                aria-selected="true">
+                          
+                              <button (click)="tableHidden()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
                                   fill="none">
                                   <path
@@ -752,11 +748,9 @@
                                     stroke-linejoin="round" />
                                 </svg>
                               </button>
-                            </li>
-                            <li role="presentation">
-                              <button class="nav-link" id="profile-tab1" data-bs-toggle="tab"
-                                data-bs-target="#profile-tab-pane1" type="button" role="tab"
-                                aria-controls="profile-tab-pane" aria-selected="false">
+                           
+    
+                              <button  (click)="tableVisible()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
                                   fill="none">
                                   <path
@@ -765,8 +759,6 @@
                                     stroke-linejoin="round" />
                                 </svg>
                               </button>
-                            </li>
-                          </ul>
                         </div>
                       </div>
 
@@ -775,43 +767,84 @@
                   <div class="map-container"></div>
                 </div>
 
-                <div class="tab-pane fade" id="profile-tab-pane1" role="tabpanel" aria-labelledby="profile-tab"
-                  tabindex="0">
-                  <div class="switch">
-                    <div class="buttons">
-                      <ul  id="myTab" role="tablist">
-                        <li role="presentation">
-                          <button class="nav-link active" id="home-tab1" data-bs-toggle="tab"
-                            data-bs-target="#home-tab-pane1" type="button" role="tab" aria-controls="home-tab-pane"
-                            aria-selected="true">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
-                              fill="none">
-                              <path
-                                d="M6.33333 2.875L12.6667 17.125M2.375 13.9583L9.5 10M6.175 17.125H12.825C14.1551 17.125 14.8202 17.125 15.3282 16.8661C15.7751 16.6384 16.1384 16.2751 16.3661 15.8282C16.625 15.3202 16.625 14.6551 16.625 13.325V6.675C16.625 5.34488 16.625 4.67981 16.3661 4.17177C16.1384 3.72489 15.7751 3.36156 15.3282 3.13386C14.8202 2.875 14.1551 2.875 12.825 2.875H6.175C4.84488 2.875 4.17981 2.875 3.67177 3.13386C3.22489 3.36156 2.86156 3.72489 2.63386 4.17177C2.375 4.67981 2.375 5.34488 2.375 6.675V13.325C2.375 14.6551 2.375 15.3202 2.63386 15.8282C2.86156 16.2751 3.22489 16.6384 3.67177 16.8661C4.17981 17.125 4.84488 17.125 6.175 17.125Z"
-                                stroke="#354ACB" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            </svg>
-                          </button>
-                        </li>
-                        <li >
-                          <button class="nav-link"  data-bs-toggle="tab"
-                            data-bs-target="#profile-tab-pane1" type="button" role="tab"
-                            aria-controls="profile-tab-pane" aria-selected="false">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
-                              fill="none">
-                              <path
-                                d="M2.375 7.625L16.625 7.625M7.125 2.875L7.125 17.125M6.175 2.875H12.825C14.1551 2.875 14.8202 2.875 15.3282 3.13386C15.7751 3.36156 16.1384 3.72489 16.3661 4.17177C16.625 4.67981 16.625 5.34488 16.625 6.675V13.325C16.625 14.6551 16.625 15.3202 16.3661 15.8282C16.1384 16.2751 15.7751 16.6384 15.3282 16.8661C14.8202 17.125 14.1551 17.125 12.825 17.125H6.175C4.84488 17.125 4.17981 17.125 3.67177 16.8661C3.22489 16.6384 2.86156 16.2751 2.63386 15.8282C2.375 15.3202 2.375 14.6551 2.375 13.325V6.675C2.375 5.34488 2.375 4.67981 2.63386 4.17177C2.86156 3.72489 3.22489 3.36156 3.67177 3.13386C4.17981 2.875 4.84488 2.875 6.175 2.875Z"
-                                stroke="#354ACB" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            </svg>
-                          </button>
-                        </li>
-                      </ul>
+                <div class="detailed-view-table" [class.d-none]="!isTableVisible" [class.d-block]="isTableVisible" >
+                  
+                  <div id="nav-map" class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="btn btn-e btn-secondary dropdown-toggle"
+                          [ngClass]="{'active': activeButton === 5}" (click)="handleToggle(5)" type="button"
+                          id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                            <path d="M0.5 4.25H15.5V5.75H0.5V4.25ZM3 7.75H13V9.25H3V7.75ZM6 11.25H10V12.75H6V11.25Z" fill="#354ACB"/>
+                          </svg>
+                          Filters
+                        </button>
+
+                        <div class="dropdown-menu mt-2" [ngClass]="{'show': activeButton === 5}"
+                          aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">
+                           Filters-i
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Filters-ii
+                          </a>
+                        </div>
+                      </div>
+
+                    <div class="end d-flex">
+
+                      
+                      
+
+                      <div class="search" [class.border-plane]="searchActive">
+                        <!-- <img src="assets/bookmark.svg" alt=""> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 17" fill="none">
+                          <path
+                            d="M14 14.5L10.0001 10.5M11.3333 7.16667C11.3333 9.744 9.244 11.8333 6.66667 11.8333C4.08934 11.8333 2 9.744 2 7.16667C2 4.58934 4.08934 2.5 6.66667 2.5C9.244 2.5 11.3333 4.58934 11.3333 7.16667Z"
+                            stroke="#8B8A8D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+  
+                        <input type="text" #input [(ngModel)]="searchInput" placeholder="search"
+                          (focus)="searchActive = true" (blur)="searchActive = false"
+                          (keyup)="filterSearch(input.value)" />
+  
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 15" fill="none">
+                          <path d="M9.91659 4.58325L4.08325 10.4166M4.08325 4.58325L9.91659 10.4166" stroke="#8B8A8D"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <!-- <img src="assets/x.svg" alt=""> -->
+  
+                      </div>
+
+                      <div class="switch">
+                        <div class="buttons">
+                          
+                              <button (click)="tableHidden()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
+                                  fill="none">
+                                  <path
+                                    d="M6.33333 2.875L12.6667 17.125M2.375 13.9583L9.5 10M6.175 17.125H12.825C14.1551 17.125 14.8202 17.125 15.3282 16.8661C15.7751 16.6384 16.1384 16.2751 16.3661 15.8282C16.625 15.3202 16.625 14.6551 16.625 13.325V6.675C16.625 5.34488 16.625 4.67981 16.3661 4.17177C16.1384 3.72489 15.7751 3.36156 15.3282 3.13386C14.8202 2.875 14.1551 2.875 12.825 2.875H6.175C4.84488 2.875 4.17981 2.875 3.67177 3.13386C3.22489 3.36156 2.86156 3.72489 2.63386 4.17177C2.375 4.67981 2.375 5.34488 2.375 6.675V13.325C2.375 14.6551 2.375 15.3202 2.63386 15.8282C2.86156 16.2751 3.22489 16.6384 3.67177 16.8661C4.17981 17.125 4.84488 17.125 6.175 17.125Z"
+                                    stroke="#354ACB" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                </svg>
+                              </button>
+                           
+    
+                              <button  (click)="tableVisible()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
+                                  fill="none">
+                                  <path
+                                    d="M2.375 7.625L16.625 7.625M7.125 2.875L7.125 17.125M6.175 2.875H12.825C14.1551 2.875 14.8202 2.875 15.3282 3.13386C15.7751 3.36156 16.1384 3.72489 16.3661 4.17177C16.625 4.67981 16.625 5.34488 16.625 6.675V13.325C16.625 14.6551 16.625 15.3202 16.3661 15.8282C16.1384 16.2751 15.7751 16.6384 15.3282 16.8661C14.8202 17.125 14.1551 17.125 12.825 17.125H6.175C4.84488 17.125 4.17981 17.125 3.67177 16.8661C3.22489 16.6384 2.86156 16.2751 2.63386 15.8282C2.375 15.3202 2.375 14.6551 2.375 13.325V6.675C2.375 5.34488 2.375 4.67981 2.63386 4.17177C2.86156 3.72489 3.22489 3.36156 3.67177 3.13386C4.17981 2.875 4.84488 2.875 6.175 2.875Z"
+                                    stroke="#354ACB" stroke-width="1.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                </svg>
+                              </button>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                 </div>
-
-              </div>
 
 
 

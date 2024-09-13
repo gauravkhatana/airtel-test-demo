@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,FormsModule],
+  imports: [CommonModule, RouterOutlet, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -15,33 +15,41 @@ export class AppComponent {
   context = { expand: false };
   inputValue = false;
   activeButton = 0;
+  isTableVisible = false;
   selectedTabIndex = 0;
   fault = false;
   searchActive = false;
-  searchInput = "";
-  globalSearchInput = "";
-  toBeSearched = "Type somthing to search";
-  items= [""];
-  filteredItems:string[] = [];
+  searchInput = '';
+  globalSearchInput = '';
+  toBeSearched = 'Type somthing to search';
+  items = [''];
+  filteredItems: string[] = [];
 
   constructor(private router: Router) {}
 
-  filterSearch(filter:string){
-    if(this.searchInput.length<1){
-      this.toBeSearched = "Type somthing to search";
-    }else{
+  filterSearch(filter: string) {
+    if (this.searchInput.length < 1) {
+      this.toBeSearched = 'Type somthing to search';
+    } else {
       this.toBeSearched = this.searchInput;
     }
 
-    // this.filteredItems = this.items.filter(item => item.toLocaleLowerCase().indexOf(filter.toLocaleLowerCase()) !== -1); 
+    // this.filteredItems = this.items.filter(item => item.toLocaleLowerCase().indexOf(filter.toLocaleLowerCase()) !== -1);
     // if (this.filteredItems.length<1 ){
     //   this.filteredItems=["Nothing Found"];
     // }
   }
-  
+
   // Check if the current route matches the provided path
   isActive(path: string): boolean {
     return this.router.url === path;
+  }
+
+  tableVisible() {
+    this.isTableVisible = true;
+  }
+  tableHidden() {
+    this.isTableVisible = false;
   }
 
   toggleExpand(event: Event): void {

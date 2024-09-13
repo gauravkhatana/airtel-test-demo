@@ -202,6 +202,8 @@
 
         .menu-text {
             margin-left: 0 !important;
+            font-size: 12px !important;
+            font-weight: 400 !important;
         }
     }
 
@@ -506,7 +508,7 @@ ul {
     border-bottom: rgba(53, 53, 53, 0.149) 1px solid;
 
 
-    .user{
+    .user {
         border: solid black 1px;
         height: 25px;
         width: 25px;
@@ -574,36 +576,39 @@ ul {
         }
     }
 
-    .search {
-        position: relative;
-        height: 60%;
-        color: #202020;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: normal;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
-        border-radius: 1.5rem;
-        border: solid 1px #00000052;
-        background-color: white;
-        padding: 7px 16px;
-        gap: 10px;
+    .search-wrapper {
+        width: 40%;
 
-        &.border-plane {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        input {
-            border: none;
-            height: 100%;
+        .search {
+            position: relative;
+            height: 40px;
+            color: #202020;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
-            padding: 0;
-            text-decoration: none;
-            outline: none;
+            border-radius: 1.5rem;
+            border: solid 1px #00000024;
+            background-color: white;
+            padding: 10px 16px;
+            gap: 10px;
+
+            
+
+            input {
+                border: none;
+                height: 100%;
+                width: 100%;
+                position: relative;
+                bottom: 2px;
+                padding: 0;
+                text-decoration: none;
+                outline: none;
+            }
         }
     }
 
@@ -817,6 +822,7 @@ ul {
                         &:hover {
                             background-color: #354ACB;
                             border-radius: .5rem;
+
                             svg {
                                 filter: brightness(100);
                             }
@@ -828,14 +834,20 @@ ul {
                     button {
                         color: #354ACB;
                         border: solid 1px #354ACB;
-                        &.active{
+
+                        &.active {
                             color: #354ACB;
                             border: solid 1px #354ACB;
                             background-color: white;
-                            svg{
+
+                            svg {
                                 filter: none;
                             }
                         }
+                    }
+
+                    .dropdown-menu{
+                        right: 55px;
                     }
                 }
             }
@@ -912,7 +924,7 @@ ul {
 
     .search {
         position: relative;
-        height: 80%;
+        height: 34px;
         color: #202020;
         font-size: 16px;
         font-style: normal;
@@ -921,10 +933,10 @@ ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 30%;
+        width: 25%;
         border-radius: 1.5rem;
         background-color: white;
-        padding: 12px 18px;
+        padding: 6px 18px;
         gap: 10px;
 
         &.border-plane {
@@ -934,15 +946,15 @@ ul {
 
         input {
             border: none;
-            height: 100%;
+            height: fit-content;
+            position: relative;
+            bottom: 1px;
             width: 100%;
             padding: 0;
             text-decoration: none;
             outline: none;
         }
-    }
-
-    .search-autocomplete {
+        .search-autocomplete {
         background: white;
         width: 100%;
         height: fit-content;
@@ -951,7 +963,7 @@ ul {
         color: #808080;
         font-weight: 400;
         left: 0;
-        top: 40px;
+        top: 30px;
         padding: 26px 0 0;
         border-bottom-left-radius: 1.5rem;
         border-bottom-right-radius: 1.5rem;
@@ -988,6 +1000,9 @@ ul {
             }
         }
     }
+    }
+
+    
 
 
     .end {
