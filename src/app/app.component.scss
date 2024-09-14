@@ -213,6 +213,8 @@
     width: calc(100% - 80px);
     margin-left: 80px;
 
+
+
     #nav-map,
     .global-nav {
         width: calc(100% - 80px);
@@ -221,6 +223,12 @@
     #offcanvasExample2 {
         margin-left: 80px;
     }
+
+    // .acs .detailed-view-table .dropdown  .dropdown-menu{
+    //     position: static;
+    //     width: 90vw;
+    // }
+
 }
 
 .border-2 {
@@ -700,7 +708,7 @@ ul {
         top: 0;
         margin-top: 60px;
         height: calc(100vh - 60px);
-        overflow: hidden;
+        overflow: visible;
 
 
 
@@ -709,12 +717,21 @@ ul {
             position: absolute;
             height: calc(100vh - 60px);
             width: 100%;
-            background-color: #EEEEEE5e;
+            background-color: #ffffff;
 
+            .map-container {
+                height: calc(100vh - 120px);
+            }
 
 
             .nav-tabs {
+                position: fixed;
                 height: 60px;
+                width: 100%;
+                background: #f9f9f9;
+                margin-left: 0;
+                padding: 0 20px;
+                z-index: 10;
                 border-bottom: solid rgba(36, 36, 36, 0.101) 1px;
 
                 .nav-item {
@@ -753,6 +770,10 @@ ul {
 
                 }
 
+            }
+
+            .tab-content {
+                margin-top: 60px;
             }
 
             #offcanvasExample2 {
@@ -849,30 +870,37 @@ ul {
                     height: 34px;
                     width: 38px;
                     border-radius: 6px;
-                    padding:8px 10px;
-                    &.active{
+                    padding: 8px 10px;
+
+                    &.active {
                         background: #354ACB;
-                        svg{
+
+                        svg {
                             filter: brightness(100);
                         }
 
                     }
-                   
+
                 }
 
             }
 
             .detailed-view-map {
-                #nav-map{
+                #nav-map {
                     padding: 20px;
                     height: fit-content;
                 }
             }
 
             .detailed-view-table {
-                padding: 20px;
+                padding: 20px 20px 0;
                 flex-direction: column;
                 gap: 1rem;
+                background-color: #EEEEEE5e;
+
+                ::-webkit-scrollbar {
+                    display: none;
+                }
 
                 .table-summary {
                     color: #121212;
@@ -893,6 +921,8 @@ ul {
                 }
 
                 .table {
+                    margin-bottom: 0;
+
                     thead {
                         background-color: #3549cb18;
 
@@ -910,6 +940,35 @@ ul {
                     th {
                         padding: 1rem .5rem;
                     }
+
+                    tfoot {
+                        border-top: solid 1px #12121216;
+
+                        nav {
+                            width: 100%;
+                            padding: 0 24px;
+                            display: flex;
+                            justify-content: space-between;
+                            color: var(--Dark-Blue---2A295C, #2A295C);
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+
+                            ul {
+                                li {
+                                    padding: 0;
+
+                                    a {
+                                        height: 100%;
+                                        color: var(--Dark-Blue---2A295C, #2A295C);
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
                 }
 
                 #nav-map {
@@ -921,7 +980,10 @@ ul {
 
 
                 .dropdown {
-                   
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start !important;
+
 
                     button {
                         height: 41px;
@@ -938,7 +1000,7 @@ ul {
                     }
 
                     .dropdown-menu {
-                        right: 62% !important;
+                        position: static;
                     }
                 }
             }
@@ -1628,6 +1690,10 @@ ul {
         overflow: scroll;
         margin: 0;
         z-index: 10;
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
     }
 
 
