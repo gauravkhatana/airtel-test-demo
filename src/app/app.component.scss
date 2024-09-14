@@ -597,7 +597,7 @@ ul {
             padding: 10px 16px;
             gap: 10px;
 
-            
+
 
             input {
                 border: none;
@@ -703,12 +703,15 @@ ul {
         overflow: hidden;
 
 
+
         .acs {
             top: 0;
             position: absolute;
             height: calc(100vh - 60px);
             width: 100%;
-            background-color: white;
+            background-color: #EEEEEE5e;
+
+
 
             .nav-tabs {
                 height: 60px;
@@ -733,7 +736,7 @@ ul {
                         &.active {
                             border: none;
                             border-bottom: solid 2px #354ACB;
-
+                            background-color: transparent;
                             font-weight: 600;
                         }
 
@@ -754,6 +757,8 @@ ul {
 
             #offcanvasExample2 {
                 width: 300px;
+                border-right: solid 1px #00000015;
+                z-index: 4000;
 
                 .offcanvas-header {
                     justify-content: space-between;
@@ -777,10 +782,38 @@ ul {
 
                 }
 
+                .offcanvas-body {
+                    padding: 8px 24px 24px;
+
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+
+                        li {
+                            padding: 8px;
+                            color: #121212;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: normal;
+                            letter-spacing: 0.003px;
+
+                            &.head {
+                                border-radius: 6px;
+                                background: rgba(53, 74, 203, 0.13);
+                                color: #354ACB;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+
                 .theme-toggle-sidebar {
                     position: absolute;
                     visibility: visible;
                     top: 500px;
+                    z-index: 3999;
                     right: -25px;
 
                     button {
@@ -800,17 +833,113 @@ ul {
                 }
             }
 
-            .detailed-view-table{
-                #nav-map{
-                    position: relative;
+            .switch {
+                border: solid 1px #12121216;
+                background-color: white;
+                border-radius: 6px;
+                height: fit-content;
+                display: flex;
+
+
+                button {
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    border: none;
+                    height: 34px;
+                    width: 38px;
+                    border-radius: 6px;
+                    padding:8px 10px;
+                    &.active{
+                        background: #354ACB;
+                        svg{
+                            filter: brightness(100);
+                        }
+
+                    }
+                   
                 }
-                svg{
-                    path{
-                        fill:#354ACB
+
+            }
+
+            .detailed-view-map {
+                #nav-map{
+                    padding: 20px;
+                    height: fit-content;
+                }
+            }
+
+            .detailed-view-table {
+                padding: 20px;
+                flex-direction: column;
+                gap: 1rem;
+
+                .table-summary {
+                    color: #121212;
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 111.111%;
+                    letter-spacing: 0.004px;
+                }
+
+                .download {
+                    border-bottom: solid 1px #354ACB;
+
+                    a {
+                        color: #354ACB;
+                        text-decoration: none;
                     }
                 }
-                .dropdown-menu{
-                    right:62% !important;
+
+                .table {
+                    thead {
+                        background-color: #3549cb18;
+
+                        th {
+                            background: transparent;
+                            color: #333;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+                        }
+                    }
+
+                    td,
+                    th {
+                        padding: 1rem .5rem;
+                    }
+                }
+
+                #nav-map {
+                    position: relative;
+                    padding: 0;
+                    height: fit-content;
+                }
+
+
+
+                .dropdown {
+                   
+
+                    button {
+                        height: 41px;
+                        padding: 8px 20px;
+                        border-radius: 28px;
+                        border: 1px solid rgba(238, 238, 238, 0.93);
+                        background: #FFF;
+
+                        svg {
+                            path {
+                                fill: #354ACB !important;
+                            }
+                        }
+                    }
+
+                    .dropdown-menu {
+                        right: 62% !important;
+                    }
                 }
             }
 
@@ -845,6 +974,9 @@ ul {
                 }
 
                 .dropdown {
+                    display: flex;
+                    align-items: center;
+
                     button {
                         color: #354ACB;
                         border: solid 1px #354ACB;
@@ -860,7 +992,7 @@ ul {
                         }
                     }
 
-                    .dropdown-menu{
+                    .dropdown-menu {
                         right: 55px;
                     }
                 }
@@ -882,7 +1014,7 @@ ul {
     position: absolute;
     height: 90px;
     width: 100%;
-    padding: 20px;
+    padding: 1rem;
     justify-content: space-between;
     gap: 24px;
 
@@ -968,55 +1100,56 @@ ul {
             text-decoration: none;
             outline: none;
         }
+
         .search-autocomplete {
-        background: white;
-        width: 100%;
-        height: fit-content;
-        position: absolute;
-        // border: #354ACB solid 2px;
-        color: #808080;
-        font-weight: 400;
-        left: 0;
-        top: 30px;
-        padding: 26px 0 0;
-        border-bottom-left-radius: 1.5rem;
-        border-bottom-right-radius: 1.5rem;
+            background: white;
+            width: 100%;
+            height: fit-content;
+            position: absolute;
+            // border: #354ACB solid 2px;
+            color: #808080;
+            font-weight: 400;
+            left: 0;
+            top: 30px;
+            padding: 26px 0 0;
+            border-bottom-left-radius: 1.5rem;
+            border-bottom-right-radius: 1.5rem;
 
-        .divider {
-            border: solid #8080803d 1px;
-            position: relative;
-            top: -14px;
-        }
+            .divider {
+                border: solid #8080803d 1px;
+                position: relative;
+                top: -14px;
+            }
 
-        li {
-            margin-top: 5px;
+            li {
+                margin-top: 5px;
 
 
-            a {
-                text-decoration: none;
-                color: (#2A295C);
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: 30px;
+                a {
+                    text-decoration: none;
+                    color: (#2A295C);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 30px;
 
-                &:hover {}
+                    &:hover {}
 
-                .search-item {
-                    font-weight: 600;
-                }
+                    .search-item {
+                        font-weight: 600;
+                    }
 
-                .search-domain {
-                    font-weight: 700;
-                    font-size: 14px;
-                    color: #283897;
+                    .search-domain {
+                        font-weight: 700;
+                        font-size: 14px;
+                        color: #283897;
+                    }
                 }
             }
         }
     }
-    }
 
-    
+
 
 
     .end {
@@ -1073,7 +1206,7 @@ ul {
             width: 40%;
             border: solid 1px #1212121b;
         }
-    
+
     }
 
 }

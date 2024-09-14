@@ -556,56 +556,69 @@
 
             <div class="detailed-view">
 
-             
-              
-                <div class="detailed-view-map" [class.d-none]="isTableVisible" [class.d-block]="!isTableVisible">
-                  <div class="map-box">
-                    <div class="offcanvas offcanvas-start theme-panel" tabindex="-1" id="offcanvasExample2"
-                      aria-labelledby="offcanvasExampleLabel">
-                      <div class="offcanvas-header">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                          <li class="nav-item">
-                            <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 0}"
-                              (click)="selectedTabIndex = 0">Smart</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 1}"
-                              (click)="selectedTabIndex = 1">Custom</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 2}"
-                              (click)="selectedTabIndex = 2">User</a>
-                          </li>
-                        </ul>
+              <div class="map-box">
+                <div class="offcanvas offcanvas-start theme-panel" tabindex="-1" id="offcanvasExample2"
+                  aria-labelledby="offcanvasExampleLabel">
+                  <div class="offcanvas-header">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 0}"
+                          (click)="selectedTabIndex = 0">Smart</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 1}"
+                          (click)="selectedTabIndex = 1">Custom</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 2}"
+                          (click)="selectedTabIndex = 2">User</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="off-canvas-divider"></div>
+                  <div class="offcanvas-body">
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 0}">
+                        <ul type="none" class="ms-0 ps-0">       
+                        <li class="head">Worst Cell Analysis</li>
+                        <li>Network One View</li>
+                        <li>Complaints</li>
+                        <li>Traffic Drip</li>
+                        <li>RAN Audit</li>
+                        <li>My Cluster View</li>
+                        <li>USer Access Info</li>
+                        <li>Churn Weekly Analysis</li>
+                        <li>GH Mesure</li>
+                        <li>Traffic Dip SR</li>
+                        <li>Issue Classifications</li>
+                        <li>RAN Live Faults</li>
+                        <li>Non Compliance Sector</li>
+                      </ul>
                       </div>
-                      <div class="off-canvas-divider"></div>
-                      <div class="offcanvas-body">
-                        <div class="tab-content" id="myTabContent">
-                          <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 0}">
-                            <p>Content for first tab</p>
-                          </div>
 
-                          <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 1}">
-                            <p>Content for second tab</p>
-                          </div>
-                          <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 2}">
-                            <p>Content for Third tab</p>
-                          </div>
-                        </div>
+                      <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 1}">
+                        <p>Content for second tab</p>
                       </div>
-                      <div class="theme-toggle-sidebar" [ngClass]="{'active': context.expand}">
-                        <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map"
-                          data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2"
-                          aria-controls="offcanvasExample">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none">
-                            <path d="M9 18L15 12L9 6" stroke="#354ACB" stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round" />
-                          </svg>
-                        </button>
+                      <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 2}">
+                        <p>Content for Third tab</p>
                       </div>
                     </div>
                   </div>
+                  <div class="theme-toggle-sidebar" [ngClass]="{'active': context.expand}">
+                    <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map"
+                      data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2"
+                      aria-controls="offcanvasExample">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="#354ACB" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+                <div class="detailed-view-map" [class.d-none]="isTableVisible" [class.d-flex]="!isTableVisible">
 
                   <div id="nav-map" class="d-flex align-items-center">
                     <div class="search" [class.border-plane]="searchActive">
@@ -737,9 +750,9 @@
                       </div>
 
                       <div class="switch">
-                        <div class="buttons">
+                        
                           
-                              <button (click)="tableHidden()">
+                              <button (click)="tableHidden()" class="active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
                                   fill="none">
                                   <path
@@ -759,7 +772,7 @@
                                     stroke-linejoin="round" />
                                 </svg>
                               </button>
-                        </div>
+                       
                       </div>
 
                     </div>
@@ -767,7 +780,7 @@
                   <div class="map-container"></div>
                 </div>
 
-                <div class="detailed-view-table" [class.d-none]="!isTableVisible" [class.d-block]="isTableVisible" >
+                <div class="detailed-view-table" [class.d-none]="!isTableVisible" [class.d-flex]="isTableVisible" >
                   
                   <div id="nav-map" class="d-flex align-items-center">
                     <div class="end d-flex w-100">
@@ -798,7 +811,8 @@
                       
                       
                       <div class="d-flex justify-content-end w-100">
-                      <div class="search" [class.border-plane]="searchActive">
+                      <!-- <div class="search me-3" [class.border-plane]="searchActive"> -->
+                      <div class="search me-3">
                         <!-- <img src="assets/bookmark.svg" alt=""> -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 17" fill="none">
                           <path
@@ -819,7 +833,7 @@
                       </div>
 
                       <div class="switch">
-                        <div class="buttons">
+                        
                           
                               <button (click)="tableHidden()">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
@@ -832,7 +846,7 @@
                               </button>
                            
     
-                              <button  (click)="tableVisible()">
+                              <button  (click)="tableVisible()" class="active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20"
                                   fill="none">
                                   <path
@@ -841,39 +855,147 @@
                                     stroke-linejoin="round" />
                                 </svg>
                               </button>
-                        </div>
+                        
                       </div>
                     </div>
 
                     </div>
                   </div>
+
+                  <div class="d-flex justify-content-between">
+                    <div class="table-summary">Table Summary (10)</div>
+                    <div class="download">
+                      <a href="#">Download</a>
+                    </div>
+                  </div>
+
+
                   <table class="table table-borderless">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Circle</th>
+                        <th scope="col">Circle Code</th>
+                        <th scope="col">Cluster Name</th>
+                        <th scope="col">Grid ID 1km</th>
+                        <th scope="col">Site ID</th>
+                        <th scope="col">Tower Type</th>
+                        <th scope="col">GPS Latitude</th>
+                        <th scope="col">GPS Longitude</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
                       </tr>
                       <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>fat</td>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
                       </tr>
                       <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>twitter</td>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
                       </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      <tr>
+                        <td scope="row">2024-02-22</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>1234</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                        <td>Lorem ipsum</td>
+                      </tr>
+                      
                     </tbody>
                   </table>
                 </div>
