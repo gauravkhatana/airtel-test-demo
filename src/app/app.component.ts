@@ -12,13 +12,18 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   title = 'airtel-map-temp';
+
   context = { expand: false };
   inputValue = false;
-  activeButton = 0;
   isTableVisible = false;
-  selectedTabIndex = 0;
   fault = false;
   searchActive = false;
+  isAcsOffCanvas = false;
+  isSidebarOpen = false;
+
+  selectedTabIndex = 0;
+  activeButton = 0;
+
   searchInput = '';
   globalSearchInput = '';
   toBeSearched = 'Type somthing to search';
@@ -45,6 +50,10 @@ export class AppComponent {
     return this.router.url === path;
   }
 
+  toogleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
   tableVisible() {
     this.isTableVisible = true;
   }
@@ -53,6 +62,7 @@ export class AppComponent {
   }
 
   toggleExpand(event: Event): void {
+    this.isAcsOffCanvas = !this.isAcsOffCanvas;
     this.context.expand = !this.context.expand;
   }
 
