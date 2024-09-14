@@ -1144,8 +1144,12 @@ ul {
         width: 25%;
         border-radius: 1.5rem;
         background-color: white;
+        border-radius: 30px;
+        background: #FFF;
+        box-shadow: 0px 30px 8px 0px rgba(0, 0, 0, 0.00), 0px 19px 8px 0px rgba(0, 0, 0, 0.01), 0px 11px 6px 0px rgba(0, 0, 0, 0.02), 0px 5px 5px 0px rgba(0, 0, 0, 0.03), 0px 1px 3px 0px rgba(0, 0, 0, 0.04);
         padding: 6px 18px;
         gap: 10px;
+
 
         &.border-plane {
             border-bottom-left-radius: 0;
