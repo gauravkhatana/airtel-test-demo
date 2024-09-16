@@ -50,9 +50,7 @@ export class AppComponent {
     return this.router.url === path;
   }
 
-  toogleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  }
+ 
 
   tableVisible() {
     this.isTableVisible = true;
@@ -156,6 +154,7 @@ export class AppComponent {
   }
 
   toggleSidebar(event: Event) {
+    this.isSidebarOpen = !this.isSidebarOpen;
     document
       .getElementsByClassName('app')[0]
       .classList.toggle('app-sidebar-minified');

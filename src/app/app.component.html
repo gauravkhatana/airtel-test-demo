@@ -21,23 +21,17 @@
       </div>
 
       <div class="menu " id="nav-tab" role="tablist">
-        <div class="menu-item" (click)="toogleSidebar()" [ngClass]="{'active': isActive('')}">
+        <div class="menu-item" [ngClass]="{'active': isActive('')}">
           <a aria-current="page" href="#0" class="menu-link " class="nav-link active" id="nav-home-tab"
             data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
             aria-selected="true">
             <div class="menu-icon">
-              <svg [class.d-none]="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
                   stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
-              <svg  [class.d-none]="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M21 4.89076C21 4.65451 20.9114 4.42795 20.7536 4.2609C20.5958 4.09385 20.3818 4 20.1587 4H6.69841C6.47529 4 6.26131 4.09385 6.10354 4.2609C5.94578 4.42795 5.85714 4.65451 5.85714 4.89076C5.85714 5.127 5.94578 5.35357 6.10354 5.52062C6.26131 5.68767 6.47529 5.78151 6.69841 5.78151H20.1587C20.3818 5.78151 20.5958 5.68767 20.7536 5.52062C20.9114 5.35357 21 5.127 21 4.89076Z" fill="black"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M21 18.2521C21 18.0159 20.9062 17.7893 20.7391 17.6222C20.5721 17.4552 20.3455 17.3613 20.1092 17.3613H5.85714C5.6209 17.3613 5.39433 17.4552 5.22728 17.6222C5.06023 17.7893 4.96639 18.0159 4.96639 18.2521C4.96639 18.4883 5.06023 18.7149 5.22728 18.882C5.39433 19.049 5.6209 19.1429 5.85714 19.1429H20.1092C20.3455 19.1429 20.5721 19.049 20.7391 18.882C20.9062 18.7149 21 18.4883 21 18.2521Z" fill="black"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M21 9.34454C21 9.10829 20.9426 8.88173 20.8406 8.71468C20.7385 8.54763 20.6 8.45378 20.4556 8.45378H11.746C11.6017 8.45378 11.4632 8.54763 11.3611 8.71468C11.259 8.88173 11.2017 9.10829 11.2017 9.34454C11.2017 9.58078 11.259 9.80735 11.3611 9.9744C11.4632 10.1414 11.6017 10.2353 11.746 10.2353H20.4556C20.6 10.2353 20.7385 10.1414 20.8406 9.9744C20.9426 9.80735 21 9.58078 21 9.34454Z" fill="black"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M20.9999 13.7983C20.9999 13.5621 20.9425 13.3355 20.8404 13.1685C20.7384 13.0014 20.5999 12.9076 20.4555 12.9076H11.7459C11.6015 12.9076 11.4631 13.0014 11.361 13.1685C11.2589 13.3355 11.2016 13.5621 11.2016 13.7983C11.2016 14.0346 11.2589 14.2611 11.361 14.4282C11.4631 14.5952 11.6015 14.6891 11.7459 14.6891H20.4555C20.5999 14.6891 20.7384 14.5952 20.8404 14.4282C20.9425 14.2611 20.9999 14.0346 20.9999 13.7983Z" fill="black"/>
-                <path d="M8.00248 14.0718V9.0255C8.00277 8.82628 7.94663 8.63105 7.84056 8.4624C7.7345 8.29376 7.58284 8.1586 7.40315 8.07257C7.18995 7.97187 6.95274 7.93308 6.71856 7.96063C6.48438 7.98818 6.26265 8.08096 6.07864 8.2284L3.02207 10.7516C2.90782 10.8506 2.81619 10.973 2.7534 11.1105C2.6906 11.2481 2.65809 11.3975 2.65809 11.5487C2.65809 11.6999 2.6906 11.8493 2.7534 11.9868C2.81619 12.1243 2.90782 12.2468 3.02207 12.3458L6.07864 14.8689C6.26265 15.0164 6.48438 15.1092 6.71856 15.1367C6.95274 15.1643 7.18995 15.1255 7.40315 15.0248C7.58284 14.9387 7.7345 14.8036 7.84057 14.6349C7.94663 14.4663 8.00277 14.2711 8.00248 14.0718Z" fill="black"/>
-              </svg>
+
             </div>
             <div class="menu-text">Alarms</div>
           </a>
@@ -83,8 +77,9 @@
       <div>
         <div class="menu">
           <div class="menu-item d-flex justyfy-content-center align-items-center">
-            <a class="app-sidebar-minify-btn  ms-2" (click)="toggleSidebar($event)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <a class="app-sidebar-minify-btn" (click)="toggleSidebar($event)">
+              <svg [class.d-none]="!isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M3 4.89076C3 4.65451 3.08863 4.42795 3.2464 4.2609C3.40417 4.09385 3.61815 4 3.84127 4H17.3016C17.5247 4 17.7387 4.09385 17.8965 4.2609C18.0542 4.42795 18.1429 4.65451 18.1429 4.89076C18.1429 5.127 18.0542 5.35357 17.8965 5.52062C17.7387 5.68767 17.5247 5.78151 17.3016 5.78151H3.84127C3.61815 5.78151 3.40417 5.68767 3.2464 5.52062C3.08863 5.35357 3 5.127 3 4.89076Z"
                   fill="black" />
@@ -101,6 +96,31 @@
                   d="M15.9975 14.0718V9.0255C15.9972 8.82628 16.0534 8.63105 16.1594 8.4624C16.2655 8.29376 16.4172 8.1586 16.5968 8.07257C16.8101 7.97187 17.0473 7.93308 17.2814 7.96063C17.5156 7.98818 17.7373 8.08096 17.9214 8.2284L20.9779 10.7516C21.0922 10.8506 21.1838 10.973 21.2466 11.1105C21.3094 11.2481 21.3419 11.3975 21.3419 11.5487C21.3419 11.6999 21.3094 11.8493 21.2466 11.9868C21.1838 12.1243 21.0922 12.2468 20.9779 12.3458L17.9214 14.8689C17.7373 15.0164 17.5156 15.1092 17.2814 15.1367C17.0473 15.1643 16.8101 15.1255 16.5968 15.0248C16.4172 14.9387 16.2655 14.8036 16.1594 14.6349C16.0534 14.4663 15.9972 14.2711 15.9975 14.0718Z"
                   fill="black" />
               </svg>
+              <!--  -->
+              <!-- <svg [class.d-none]="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <path
+    d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+    stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg> -->
+              <svg [class.d-none]="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21 4.89076C21 4.65451 20.9114 4.42795 20.7536 4.2609C20.5958 4.09385 20.3818 4 20.1587 4H6.69841C6.47529 4 6.26131 4.09385 6.10354 4.2609C5.94578 4.42795 5.85714 4.65451 5.85714 4.89076C5.85714 5.127 5.94578 5.35357 6.10354 5.52062C6.26131 5.68767 6.47529 5.78151 6.69841 5.78151H20.1587C20.3818 5.78151 20.5958 5.68767 20.7536 5.52062C20.9114 5.35357 21 5.127 21 4.89076Z"
+                  fill="black" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21 18.2521C21 18.0159 20.9062 17.7893 20.7391 17.6222C20.5721 17.4552 20.3455 17.3613 20.1092 17.3613H5.85714C5.6209 17.3613 5.39433 17.4552 5.22728 17.6222C5.06023 17.7893 4.96639 18.0159 4.96639 18.2521C4.96639 18.4883 5.06023 18.7149 5.22728 18.882C5.39433 19.049 5.6209 19.1429 5.85714 19.1429H20.1092C20.3455 19.1429 20.5721 19.049 20.7391 18.882C20.9062 18.7149 21 18.4883 21 18.2521Z"
+                  fill="black" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M21 9.34454C21 9.10829 20.9426 8.88173 20.8406 8.71468C20.7385 8.54763 20.6 8.45378 20.4556 8.45378H11.746C11.6017 8.45378 11.4632 8.54763 11.3611 8.71468C11.259 8.88173 11.2017 9.10829 11.2017 9.34454C11.2017 9.58078 11.259 9.80735 11.3611 9.9744C11.4632 10.1414 11.6017 10.2353 11.746 10.2353H20.4556C20.6 10.2353 20.7385 10.1414 20.8406 9.9744C20.9426 9.80735 21 9.58078 21 9.34454Z"
+                  fill="black" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M20.9999 13.7983C20.9999 13.5621 20.9425 13.3355 20.8404 13.1685C20.7384 13.0014 20.5999 12.9076 20.4555 12.9076H11.7459C11.6015 12.9076 11.4631 13.0014 11.361 13.1685C11.2589 13.3355 11.2016 13.5621 11.2016 13.7983C11.2016 14.0346 11.2589 14.2611 11.361 14.4282C11.4631 14.5952 11.6015 14.6891 11.7459 14.6891H20.4555C20.5999 14.6891 20.7384 14.5952 20.8404 14.4282C20.9425 14.2611 20.9999 14.0346 20.9999 13.7983Z"
+                  fill="black" />
+                <path
+                  d="M8.00248 14.0718V9.0255C8.00277 8.82628 7.94663 8.63105 7.84056 8.4624C7.7345 8.29376 7.58284 8.1586 7.40315 8.07257C7.18995 7.97187 6.95274 7.93308 6.71856 7.96063C6.48438 7.98818 6.26265 8.08096 6.07864 8.2284L3.02207 10.7516C2.90782 10.8506 2.81619 10.973 2.7534 11.1105C2.6906 11.2481 2.65809 11.3975 2.65809 11.5487C2.65809 11.6999 2.6906 11.8493 2.7534 11.9868C2.81619 12.1243 2.90782 12.2468 3.02207 12.3458L6.07864 14.8689C6.26265 15.0164 6.48438 15.1092 6.71856 15.1367C6.95274 15.1643 7.18995 15.1255 7.40315 15.0248C7.58284 14.9387 7.7345 14.8036 7.84057 14.6349C7.94663 14.4663 8.00277 14.2711 8.00248 14.0718Z"
+                  fill="black" />
+              </svg>
+              <!--  -->
             </a>
             <p>Alarms</p>
           </div>
@@ -615,11 +635,13 @@
                     <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map"
                       data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample">
 
-                      <svg [class.d-none]="!isAcsOffCanvas" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" transform="rotate(180)">
+                      <svg [class.d-none]="!isAcsOffCanvas" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" transform="rotate(180)">
                         <path d="M9 18L15 12L9 6" stroke="#354ACB" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round" />
                       </svg>
-                      <svg [class.d-none]="isAcsOffCanvas" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <svg [class.d-none]="isAcsOffCanvas" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none">
                         <path d="M9 18L15 12L9 6" stroke="#354ACB" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round" />
                       </svg>
@@ -1007,9 +1029,11 @@
                           <ul class="pagination ms-0">
                             <li class="page-item">
                               <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" transform="rotate(180)">
-                                  <path d="M7.5 15L12.5 10L7.5 5" stroke="#354ACB" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></span>
+                                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none" transform="rotate(180)">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="#354ACB" stroke-width="1.66667"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg></span>
                               </a>
                             </li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -1017,9 +1041,11 @@
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
                               <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                  <path d="M7.5 15L12.5 10L7.5 5" stroke="#354ACB" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg></span>
+                                <span aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                    viewBox="0 0 20 20" fill="none">
+                                    <path d="M7.5 15L12.5 10L7.5 5" stroke="#354ACB" stroke-width="1.66667"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                                  </svg></span>
                               </a>
                             </li>
                           </ul>
