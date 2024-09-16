@@ -20,10 +20,11 @@ export class AppComponent {
   searchActive = false;
   isAcsOffCanvas = false;
   isSidebarOpen = false;
-
+  
   selectedTabIndex = 0;
   activeButton = 0;
-
+  
+  globalNav = "alarms";
   searchInput = '';
   globalSearchInput = '';
   toBeSearched = 'Type somthing to search';
@@ -50,7 +51,9 @@ export class AppComponent {
     return this.router.url === path;
   }
 
- 
+  currentTab(tab:string){
+    this.globalNav = tab;
+  }
 
   tableVisible() {
     this.isTableVisible = true;
