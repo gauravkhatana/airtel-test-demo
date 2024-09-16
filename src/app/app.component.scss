@@ -1,5 +1,10 @@
+//Font familsy css
+.app{
+    font-family: "Manrope", sans-serif ;
+}
 // app-sidebar component
 .app-sidebar {
+     font-family: "Manrope", sans-serif ;
     height: 100vh;
     width: 220px;
     position: absolute;
@@ -11,18 +16,20 @@
     border-left: 1px solid #E1E3EA;
 
     .menu {
-        &:first-child {
-            .menu-item {
-                margin: 15px 15px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 8px;
 
-            }
-
-        }
 
         .airtel-logo {
-            p {
+           padding: 0 6px;
+           display: flex;
+           gap: 10px;
+
+            span {
+               
                 display: block;
-                padding-left: .5rem;
                 color: #F03800;
                 font-size: 20px;
                 font-style: normal;
@@ -36,25 +43,32 @@
             position: relative;
 
 
+           
             .nav-link {
-                padding: 14px 26px;
-
-
-
                 line-height: 20px;
                 text-decoration: none;
                 display: flex;
-                align-items: center;
                 font-weight: 500;
                 height: fit-content;
                 justify-content: center;
                 align-items: center;
                 text-align: start;
                 border-radius: 8px;
-                border: 1.5px #283897;
-                // background: #F6F6F6;
                 padding-left: 0;
-                margin: 10px 8px;
+                
+                &.active {
+                    font-weight: 600;
+                    svg{
+                        path{
+                            stroke: #354ACB;
+                        }
+                    }
+                    .menu-text{
+                        color: #354ACB;
+                    }
+                } 
+               
+                
 
 
                 .menu-text {
@@ -90,13 +104,9 @@
 
 
                 }
-
-                &:hover,
-                &:focus {
-                    background: none;
-
-                }
             }
+
+           
 
             .menu-icon {
                 display: flex;
@@ -187,7 +197,9 @@
 
 
     .airtel-logo {
-        p {
+        justify-content: center;
+        padding: 0;
+        span {
             display: none;
         }
     }
@@ -196,7 +208,7 @@
         .nav-link {
             flex-direction: column;
             text-align: center;
-            padding: 10px;
+            // padding: 10px;
 
         }
 
@@ -726,7 +738,7 @@ ul {
 
             .nav-tabs {
                 position: fixed;
-                height: 60px;
+                height: 55px;
                 width: 100%;
                 background: #f9f9f9;
                 margin-left: 0;
@@ -749,6 +761,7 @@ ul {
                         transition: none;
                         color: #354ACB;
                         font-weight: 400;
+                        padding: 10px 24px;
 
                         &.active {
                             border: none;
@@ -773,7 +786,7 @@ ul {
             }
 
             .tab-content {
-                margin-top: 60px;
+                margin-top: 55px;
             }
 
             #offcanvasExample2 {
@@ -821,14 +834,18 @@ ul {
                             font-size: 14px;
                             font-style: normal;
                             font-weight: 400;
+                            border-radius: 6px;
                             line-height: normal;
                             letter-spacing: 0.003px;
 
                             &.head {
-                                border-radius: 6px;
+                               
                                 background: rgba(53, 74, 203, 0.13);
                                 color: #354ACB;
                                 font-weight: 600;
+                            }
+                            &:hover{
+                                background-color: #F6F6F6;
                             }
                         }
                     }
@@ -979,6 +996,7 @@ ul {
                     position: relative;
                     padding: 0;
                     height: fit-content;
+                    width: auto;
                     .search{
                         width: 35% ;
                     }

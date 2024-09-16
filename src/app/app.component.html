@@ -2,7 +2,7 @@
   <!-- sidebar.component.html -->
   <div id="sidebar" class="app-sidebar" data-bs-theme="dark">
     <div class="scrollbar-container app-sidebar-content ps">
-      <div class="menu">
+      <div class="menu " id="nav-tab" role="tablist">
         <div class="menu-item airtel-logo d-flex">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <g clip-path="url(#clip0_1324_8004)">
@@ -16,11 +16,9 @@
               </clipPath>
             </defs>
           </svg>
-          <p>Airtel</p>
+          <span>Airtel</span>
         </div>
-      </div>
 
-      <div class="menu " id="nav-tab" role="tablist">
         <div class="menu-item" [ngClass]="{'active': isActive('')}">
           <a aria-current="page" href="#0" class="menu-link " class="nav-link active" id="nav-home-tab"
             data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
@@ -96,12 +94,7 @@
                   d="M15.9975 14.0718V9.0255C15.9972 8.82628 16.0534 8.63105 16.1594 8.4624C16.2655 8.29376 16.4172 8.1586 16.5968 8.07257C16.8101 7.97187 17.0473 7.93308 17.2814 7.96063C17.5156 7.98818 17.7373 8.08096 17.9214 8.2284L20.9779 10.7516C21.0922 10.8506 21.1838 10.973 21.2466 11.1105C21.3094 11.2481 21.3419 11.3975 21.3419 11.5487C21.3419 11.6999 21.3094 11.8493 21.2466 11.9868C21.1838 12.1243 21.0922 12.2468 20.9779 12.3458L17.9214 14.8689C17.7373 15.0164 17.5156 15.1092 17.2814 15.1367C17.0473 15.1643 16.8101 15.1255 16.5968 15.0248C16.4172 14.9387 16.2655 14.8036 16.1594 14.6349C16.0534 14.4663 15.9972 14.2711 15.9975 14.0718Z"
                   fill="black" />
               </svg>
-              <!--  -->
-              <!-- <svg [class.d-none]="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-  <path
-    d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-    stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-</svg> -->
+
               <svg [class.d-none]="isSidebarOpen" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd"
