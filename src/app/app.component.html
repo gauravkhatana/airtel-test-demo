@@ -5,15 +5,36 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Create Map Site Layer</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Modal in acs map
+          <form action="">
+            <div class="form-inputs">
+              <div class="form-input">
+                <label for="">Select Technology</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>- Select -</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+              <div class="form-input">
+                <label for="">Lorem ipsum</label>
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>- Select -</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn close" data-bs-dismiss="modal">Cancle</button>
+          <button type="button" class="btn active">Apply</button>
         </div>
       </div>
     </div>
@@ -23,15 +44,19 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Search Result - DSL_232345 </h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Modal in global navbar
+          <div class="list">
+            <div class="list-item"><p class="left">DSL Name</p><p class="right"> DSL_232345</p></div>
+            <div class="list-item"><p class="left">Region </p><p class="right">GJ</p></div>
+            <div class="list-item"><p class="left">Lorem ipsum</p><p class="right"> lorem ipsun</p></div>
+            <div class="list-item"><p class="left">Lorem ipsum </p><p class="right">lorem ipsun</p></div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+        <div class="modal-footer center">
+          <button type="button" class="btn active">OK</button>
         </div>
       </div>
     </div>
@@ -382,8 +407,8 @@
             </div>
             <div class="off-canvas-divider"></div>
             <div class="submit-area">
-              <button>Cancle</button>
-              <button class="active">Submit</button>
+              <button>Close</button>
+              <button class="active">Apply</button>
             </div>
           </form>
 
@@ -994,7 +1019,8 @@
                             fill="#354ACB" />
                         </svg>
                         <span>Filters</span>
-                        <p [class.d-none]="!isDetailedViewTableFilter" class="d-flex h-100 align-items-center justify-content-center">&nbsp; &nbsp;x</p>
+                        <p [class.d-none]="!isDetailedViewTableFilter"
+                          class="d-flex h-100 align-items-center justify-content-center">&nbsp; &nbsp;x</p>
                       </button>
 
 
@@ -1135,6 +1161,10 @@
                             </select>
                           </div>
                         </div>
+                      </div>
+                      <div class="submit-area">
+                        <button type="submit" class="active">Apply</button>
+                        <button type="button">Reset</button>
                       </div>
                     </form>
                   </div>

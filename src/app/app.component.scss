@@ -3,6 +3,105 @@
     font-family: "Manrope", sans-serif;
 }
 
+.modal {
+    .modal-dialog {
+        top: 25%;
+
+        .modal-header {
+            background: #3549cb15 !important;
+
+            .modal-title {}
+        }
+
+        .modal-body {
+            padding: 20px 0;
+
+            .list {
+                display: flex;
+                flex-direction: column;
+                padding: 0 25px;
+                gap: 16px;
+
+                .list-item {
+                    display: flex;
+                    justify-content: space-between;
+                    color: rgba(0, 0, 0, 0.80);
+                    font-size: 14px;
+                    font-style: normal;
+                   
+                    line-height: 150%;
+                    letter-spacing: -0.154px;
+                     p{
+                        margin: 0;
+                     }
+
+                    .left {
+                        font-weight: 600;
+                    }
+
+                    .right {
+                        font-weight: 400;
+                    }
+                }
+
+            }
+
+            form{
+                padding: 0 20px;
+                .form-inputs{
+                    padding: 0 16px ;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 25px;
+                    select{
+                        padding: 10px 16px;
+                    }
+                }
+            }
+        }
+
+        .modal-footer {
+
+            button {
+                border-radius: 24px;
+                border: 2px solid #354ACB;
+                background-color: #fff;
+                color: #354ACB;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 16px;
+
+                button {
+                    padding: 10px 20px;
+                }
+
+                &.close {
+                    &:hover {
+                        background: #fff;
+                    }
+                }
+
+                &.active {
+                    background-color: #354ACB;
+                    color: #fff;
+
+                    padding: 10px 24px;
+
+                }
+            }
+
+            &.center {
+                justify-content: center;
+
+
+            }
+
+        }
+    }
+}
+
+
 // app-sidebar component
 .app-sidebar {
     font-family: "Manrope", sans-serif;
@@ -755,6 +854,7 @@ ul {
                     gap: 10px;
                     flex: 1 0 0;
                     color: #354ACB;
+                    background: #fff;
                     text-align: center;
                     font-feature-settings: 'ss01' on, 'cv01' on, 'cv11' on;
                     font-size: 16px;
@@ -1220,10 +1320,11 @@ ul {
                                 gap: 16px;
 
                                 .form-input {
-                                    
+
                                     line-height: normal;
                                     font-size: 14px;
                                     font-style: normal;
+
                                     label {
                                         color: #121212;
                                         font-weight: 500;
@@ -1234,13 +1335,39 @@ ul {
                                         color: #202020;
                                         font-weight: 400;
                                         letter-spacing: 0.003px;
-                                        &:focus{
+
+                                        &:focus {
                                             box-shadow: none;
                                             border-color: #dee2e6;
                                         }
                                     }
                                 }
                             }
+
+                        }
+
+                        .submit-area {
+                            padding-top: 16px;
+                            height: 48px;
+                            width: 100%;
+                            gap: 16px;
+                            display: flex;
+                            flex-direction: row-reverse;
+                            justify-content: end;
+
+                            button {
+                                border: 1px solid #354ACB;
+                                border-radius: 24px;
+                                padding: 0 20px;
+                                background: #fff;
+
+                                &.active {
+                                    background: #354ACB;
+                                    color: #fff;
+                                }
+
+                            }
+
                         }
                     }
 
@@ -1384,7 +1511,7 @@ ul {
                         border-radius: 28px;
                         border: 1px solid rgba(238, 238, 238, 0.93);
                         background: #FFF;
-                        display: flex ;
+                        display: flex;
                         align-items: center;
                         justify-content: center;
 
@@ -1402,6 +1529,12 @@ ul {
                             svg {
                                 filter: brightness(100) !important;
                             }
+                        }
+
+                        p {
+                            position: relative;
+                            top: -10%;
+
                         }
 
                     }
