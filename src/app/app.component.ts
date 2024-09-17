@@ -20,6 +20,7 @@ export class AppComponent {
   searchActive = false;
   isAcsOffCanvas = false;
   isSidebarOpen = false;
+  isDetailedViewTableFilter = false;
   
   selectedTabIndex = 0;
   activeButton = 0;
@@ -49,6 +50,10 @@ export class AppComponent {
   // Check if the current route matches the provided path
   isActive(path: string): boolean {
     return this.router.url === path;
+  }
+
+  toggleDetailedViewTableFilter(){
+    this.isDetailedViewTableFilter = !this.isDetailedViewTableFilter;
   }
 
   currentTab(tab:string){

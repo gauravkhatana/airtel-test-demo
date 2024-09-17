@@ -1,4 +1,42 @@
 <div class="app app-sidebar-fixed">
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Modal in acs map
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Modal in global navbar
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- sidebar.component.html -->
   <div id="sidebar" class="app-sidebar" data-bs-theme="dark">
 
@@ -60,15 +98,16 @@
                   stroke="#121212" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
-            <div class="menu-text">ASC</div>
+            <div class="menu-text">ACS</div>
           </a>
         </div>
       </div>
 
+
     </div>
 
     <div class="theme-toggle-sidebar" [class.d-none]="!(globalNav === 'acs')" [ngClass]="{'active': context.expand}">
-      <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map"  data-bs-toggle="offcanvas"
+      <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
 
         <svg [class.d-none]="!isAcsOffCanvas" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -168,10 +207,13 @@
           </ul>
         </div> -->
 
+          <span><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal2">More</a></span>
+
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 15" fill="none">
             <path d="M9.91659 4.58325L4.08325 10.4166M4.08325 4.58325L9.91659 10.4166" stroke="#8B8A8D"
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
+
           <!-- <img src="assets/x.svg" alt=""> -->
 
         </div>
@@ -199,67 +241,159 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="#354ACB">
               <path d="M0.5 4.25H15.5V5.75H0.5V4.25ZM3 7.75H13V9.25H3V7.75ZM6 11.25H10V12.75H6V11.25Z" fill="#354ACB" />
             </svg>
-            Filters
+            <span class="ms-1">Filters</span>
 
           </button>
         </div>
 
         <div class="offcanvas offcanvas-end theme-panel" tabindex="-1" id="offcanvasExample3"
           aria-labelledby="offcanvasExample3Label">
-          <div class="offcanvas-header">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 0}"
-                  (click)="selectedTabIndex = 0">Smart</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 1}"
-                  (click)="selectedTabIndex = 1">Custom</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 2}"
-                  (click)="selectedTabIndex = 2">User</a>
-              </li>
-            </ul>
-          </div>
-          <div class="off-canvas-divider"></div>
-          <div class="offcanvas-body">
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 0}">
-                <ul type="none" class="ms-0 ps-0">
-                  <li class="head">Worst Cell Analysis</li>
-                  <li>Network One View</li>
-                  <li>Complaints</li>
-                  <li>Traffic Drip</li>
-                  <li>RAN Audit</li>
-                  <li>My Cluster View</li>
-                  <li>USer Access Info</li>
-                  <li>Churn Weekly Analysis</li>
-                  <li>GH Mesure</li>
-                  <li>Traffic Dip SR</li>
-                  <li>Issue Classifications</li>
-                  <li>RAN Live Faults</li>
-                  <li>Non Compliance Sector</li>
-                </ul>
-              </div>
-
-              <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 1}">
-                <p>Content for second tab</p>
-              </div>
-              <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 2}">
-                <p>Content for Third tab</p>
-              </div>
+          <form class="nav-filter-form">
+            <div class="offcanvas-header">
+              <Span>Filter</Span> <button data-bs-dismiss="offcanvas">x</button>
             </div>
-          </div>
+            <div class="off-canvas-divider"></div>
+            <div class="offcanvas-body">
 
+              <div class="form-content">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 0}"
+                      (click)="selectedTabIndex = 0">Date and Time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 1}"
+                      (click)="selectedTabIndex = 1">Network Container</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 2}"
+                      (click)="selectedTabIndex = 2">Technology</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 3}"
+                      (click)="selectedTabIndex = 3">Duplex Mode</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 4}"
+                      (click)="selectedTabIndex = 4">Freq Band</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [ngClass]="{'active': selectedTabIndex === 5}"
+                      (click)="selectedTabIndex = 5">Local Filters</a>
+                  </li>
+                </ul>
+
+                <div class="tab-content" id="myTabContent">
+                  <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 0}">
+                    <div class="form-inputs">
+                      <div class="form-input">
+                        <label for="">Resolution</label>
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Open this select menu</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                      </div>
+                      <div class="form-input">
+                        <label for="">Date</label>
+                        <div class="input-group mb-3">
+                          <input type="date" class="form-control" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        </div>
+
+                      </div>
+
+                      <div class=" form-input">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          TDO
+                        </label>
+                      </div>
+                      <div class=" form-input">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">
+                          FDO
+                        </label>
+                      </div>
+                      <div class=" form-input">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          5G
+                        </label>
+                      </div>
+
+                      <div class=" form-input">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                          checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          4G
+                        </label>
+                      </div>
+
+                      <div class=" form-input">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                          checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          2G
+                        </label>
+                      </div>
+
+                      <div class=" form-input">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                          checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Volte
+                        </label>
+                      </div>
+
+                      <div class=" form-input">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                          checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          4G NR
+                        </label>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 1}">
+                    <p>Content for Network Container</p>
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 2}">
+                    <p>Content for Technology</p>
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 3}">
+                    <p>Content for Duplex Mode</p>
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 4}">
+                    <p>Content for Freq Band</p>
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="{'show active': selectedTabIndex === 5}">
+                    <p>Content for Local Filters</p>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+            <div class="off-canvas-divider"></div>
+            <div class="submit-area">
+              <button>Cancle</button>
+              <button class="active">Submit</button>
+            </div>
+          </form>
 
         </div>
 
         <div class="user-section d-flex flex-column">
           <div class="user">
-            U
+            <img src="assets/user.png" alt="" class="img-fluid">
           </div>
-          <div class="me d-flex align-items-center">
+          <div class="me">
             <span>Me</span>
             <span>></span>
           </div>
@@ -812,9 +946,10 @@
                         <a class="dropdown-item" href="#">
                           Geo Experience
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
                           Map Site
                         </a>
+
                       </div>
                     </div>
 
@@ -847,33 +982,22 @@
 
               <div class="detailed-view-table" [class.d-none]="!isTableVisible" [class.d-flex]="isTableVisible">
 
-                <div id="nav-map" class="d-flex align-items-center">
+                <div id="nav-map" class="d-flex flex-column align-items-center">
                   <div class="end d-flex w-100">
 
-                    <div class="dropdown">
-                      <button class="btn btn-e btn-secondary dropdown-toggle" [ngClass]="{'active': activeButton === 5}"
-                        (click)="handleToggle(5)" type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <div class="dropdown detailed-view-table-filter-button">
+                      <button class="btn btn-e" [class.active]="isDetailedViewTableFilter"
+                        (click)="toggleDetailedViewTableFilter()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17"
                           fill="#354ACB">
                           <path d="M0.5 4.25H15.5V5.75H0.5V4.25ZM3 7.75H13V9.25H3V7.75ZM6 11.25H10V12.75H6V11.25Z"
                             fill="#354ACB" />
                         </svg>
-                        Filters
+                        <span>Filters</span>
+                        <p [class.d-none]="!isDetailedViewTableFilter" class="d-flex h-100 align-items-center justify-content-center">&nbsp; &nbsp;x</p>
                       </button>
 
-                      <div class="dropdown-menu mt-2" [ngClass]="{'show': activeButton === 5}"
-                        aria-labelledby="dropdownMenuButton">
-                        <form action="">
-                          <label for=""></label>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>- Select -</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </form>
-                      </div>
+
                     </div>
 
                     <div class="d-flex justify-content-end w-100">
@@ -923,6 +1047,96 @@
                       </div>
                     </div>
 
+                  </div>
+
+                  <div class="detailed-view-table-filter-form" [class.d-none]="!isDetailedViewTableFilter">
+                    <form action="">
+                      <div class="table-filter-form">
+                        <div class="form-inputs">
+                          <div class="form-input">
+                            <label for="">Date</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">Circle</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">Circle Code</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">Cluster Name</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">Grid ID 1KM</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">Site ID</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">Tower Type</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">GPS Latitude</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                          <div class="form-input">
+                            <label for="">GPS Longitude</label>
+                            <select class="form-select" aria-label="Default select example">
+                              <option selected>- Select -</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
 
