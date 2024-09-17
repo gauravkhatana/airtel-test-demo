@@ -67,8 +67,8 @@
 
     </div>
 
-    <div class="theme-toggle-sidebar" [ngClass]="{'active': context.expand}">
-      <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map" data-bs-toggle="offcanvas"
+    <div class="theme-toggle-sidebar" [class.d-none]="!(globalNav === 'acs')" [ngClass]="{'active': context.expand}">
+      <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map"  data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
 
         <svg [class.d-none]="!isAcsOffCanvas" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
