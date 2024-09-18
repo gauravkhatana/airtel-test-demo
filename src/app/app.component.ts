@@ -21,6 +21,7 @@ export class AppComponent {
   isAcsOffCanvas = false;
   isSidebarOpen = false;
   isDetailedViewTableFilter = false;
+  isLoading = false;
   
   selectedTabIndex = 0;
   activeButton = 0;
@@ -61,14 +62,21 @@ export class AppComponent {
   }
 
   tableVisible() {
-    this.isTableVisible = true;
+    this.isLoading = true;
+    setTimeout(() => {
+      this.isTableVisible = true;
+      this.isLoading = false;
+    }, 1000);
   }
   tableHidden() {
     this.isTableVisible = false;
   }
 
-  toggleExpand(event: Event): void {
+  toggleIsAcs(){
     this.isAcsOffCanvas = !this.isAcsOffCanvas;
+  }
+
+  toggleExpand(event: Event): void {
     this.context.expand = !this.context.expand;
   }
 

@@ -28,12 +28,13 @@
                     color: rgba(0, 0, 0, 0.80);
                     font-size: 14px;
                     font-style: normal;
-                   
+
                     line-height: 150%;
                     letter-spacing: -0.154px;
-                     p{
+
+                    p {
                         margin: 0;
-                     }
+                    }
 
                     .left {
                         font-weight: 600;
@@ -46,14 +47,16 @@
 
             }
 
-            form{
+            form {
                 padding: 0 20px;
-                .form-inputs{
-                    padding: 0 16px ;
+
+                .form-inputs {
+                    padding: 0 16px;
                     display: flex;
                     flex-direction: column;
                     gap: 25px;
-                    select{
+
+                    select {
                         padding: 10px 16px;
                     }
                 }
@@ -735,10 +738,21 @@ ul {
                 height: 100%;
                 width: 100%;
                 position: relative;
-                bottom: 2px;
                 padding: 0;
                 text-decoration: none;
                 outline: none;
+            }
+        }
+
+        span {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-bottom: 1px solid #354ACB;
+            a{
+                color: #354ACB;;
+                text-decoration: none;
             }
         }
     }
@@ -1157,6 +1171,23 @@ ul {
             }
 
 
+            .loading-spinner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                color: #354ACB;
+
+                .spinner-border {
+                    border-right-color: #3549cb1b;
+                    border-left-color: #3549cb1b;
+                    border-top-color: #3549cb1b;
+                }
+            }
+
+
 
             .detailed-view-map {
                 #nav-map {
@@ -1328,6 +1359,7 @@ ul {
                                     label {
                                         color: #121212;
                                         font-weight: 500;
+                                        margin-bottom: 6px;
                                     }
 
                                     select {
@@ -1360,6 +1392,7 @@ ul {
                                 border-radius: 24px;
                                 padding: 0 20px;
                                 background: #fff;
+                                color: #354ACB;
 
                                 &.active {
                                     background: #354ACB;
@@ -1385,6 +1418,7 @@ ul {
 
                 .download {
                     border-bottom: solid 1px #354ACB;
+                   
 
 
                     a {
@@ -1394,6 +1428,7 @@ ul {
                         text-decoration: none;
                         padding-left: 0;
                         padding-right: 0;
+                        padding-bottom: 3px;
                     }
 
                     .dropdown-menu {
@@ -1658,7 +1693,7 @@ ul {
             color: #808080;
             font-weight: 400;
             left: 0;
-            top: 30px;
+            top: 26px;
             padding: 26px 0 0;
             border-bottom-left-radius: 1.5rem;
             border-bottom-right-radius: 1.5rem;

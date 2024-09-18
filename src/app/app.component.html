@@ -29,6 +29,12 @@
                   <option value="3">Three</option>
                 </select>
               </div>
+              <div class="form-input">
+                <label for="customRange2" class="form-label">Example range</label>
+                <input type="range" class="form-range" min="0" max="2" value="1" id="customRange2">
+                <div class="range-value d-flex justify-content-between"><span>-90</span><span>0</span><span>90</span>
+                </div>
+              </div>
             </div>
           </form>
         </div>
@@ -49,14 +55,26 @@
         </div>
         <div class="modal-body">
           <div class="list">
-            <div class="list-item"><p class="left">DSL Name</p><p class="right"> DSL_232345</p></div>
-            <div class="list-item"><p class="left">Region </p><p class="right">GJ</p></div>
-            <div class="list-item"><p class="left">Lorem ipsum</p><p class="right"> lorem ipsun</p></div>
-            <div class="list-item"><p class="left">Lorem ipsum </p><p class="right">lorem ipsun</p></div>
+            <div class="list-item">
+              <p class="left">DSL Name</p>
+              <p class="right"> DSL_232345</p>
+            </div>
+            <div class="list-item">
+              <p class="left">Region </p>
+              <p class="right">GJ</p>
+            </div>
+            <div class="list-item">
+              <p class="left">Lorem ipsum</p>
+              <p class="right"> lorem ipsun</p>
+            </div>
+            <div class="list-item">
+              <p class="left">Lorem ipsum </p>
+              <p class="right">lorem ipsun</p>
+            </div>
           </div>
         </div>
         <div class="modal-footer center">
-          <button type="button" class="btn active">OK</button>
+          <button type="button" class="btn active" data-bs-dismiss="modal">OK</button>
         </div>
       </div>
     </div>
@@ -131,7 +149,7 @@
 
     </div>
 
-    <div class="theme-toggle-sidebar" [class.d-none]="!(globalNav === 'acs')" [ngClass]="{'active': context.expand}">
+    <div class="theme-toggle-sidebar" (click)="toggleIsAcs()" [class.d-none]="!(globalNav === 'acs')" [ngClass]="{'active': context.expand}">
       <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
 
@@ -234,10 +252,10 @@
 
           <span><a href="" data-bs-toggle="modal" data-bs-target="#exampleModal2">More</a></span>
 
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 15" fill="none">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 15" fill="none">
             <path d="M9.91659 4.58325L4.08325 10.4166M4.08325 4.58325L9.91659 10.4166" stroke="#8B8A8D"
               stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+          </svg> -->
 
           <!-- <img src="assets/x.svg" alt=""> -->
 
@@ -407,7 +425,7 @@
             </div>
             <div class="off-canvas-divider"></div>
             <div class="submit-area">
-              <button>Close</button>
+              <button data-bs-dismiss="offcanvas">Close</button>
               <button class="active">Apply</button>
             </div>
           </form>
@@ -786,6 +804,12 @@
 
             <div class="detailed-view">
 
+              <div class="loading-spinner d-flex justify-content-center align-items-center" [class.d-none]="!isLoading">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+
               <div class="map-box">
                 <div class="offcanvas offcanvas-start theme-panel" tabindex="-1" id="offcanvasExample2"
                   aria-labelledby="offcanvasExample2Label">
@@ -840,7 +864,7 @@
                     </div>
                   </div>
 
-                  <div class="theme-toggle-sidebar" [ngClass]="{'active': context.expand}">
+                  <div class="theme-toggle-sidebar" (click)="toggleIsAcs()" [ngClass]="{'active': context.expand}">
                     <button type="button" (click)="toggleExpand($event)" class="theme-collapse-btn-map"
                       data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
 
@@ -1040,10 +1064,10 @@
                           (focus)="searchActive = true" (blur)="searchActive = false"
                           (keyup)="filterSearch(input.value)" />
 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 15" fill="none">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 14 15" fill="none">
                           <path d="M9.91659 4.58325L4.08325 10.4166M4.08325 4.58325L9.91659 10.4166" stroke="#8B8A8D"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        </svg> -->
                         <!-- <img src="assets/x.svg" alt=""> -->
 
                       </div>
@@ -1177,10 +1201,6 @@
                       [ngClass]="{'active': activeButton === 14}" (click)="handleToggle(14)" type="button"
                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Download
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M5 7.5L10 12.5L15 7.5" stroke="#354ACB" stroke-width="1.66667" stroke-linecap="round"
-                          stroke-linejoin="round" />
-                      </svg>
                     </a>
 
 
