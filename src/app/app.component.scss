@@ -1497,6 +1497,9 @@ ul {
                     td,
                     th {
                         padding: 1rem .4rem;
+                        &.file-name{
+                            width: 40%;
+                        }
                     }
 
                     tfoot {
