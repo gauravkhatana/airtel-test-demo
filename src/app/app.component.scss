@@ -74,6 +74,7 @@
                 font-style: normal;
                 font-weight: 600;
                 line-height: 16px;
+                height: 80%;
 
                 button {
                     padding: 10px 20px;
@@ -100,6 +101,143 @@
 
             }
 
+        }
+    }
+}
+
+#exampleModal3 {
+
+    .modal-dialog {
+        top: 0%;
+        left: -7%;
+
+        .modal-content {
+            width: 740px;
+            height: 92vh;
+
+            .modal-header {
+                padding: 16px 24px;
+
+                .search {
+                    position: relative;
+                    height: 34px;
+                    color: #202020;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 35%;
+                    border-radius: 1.5rem;
+                    background-color: white;
+                    border-radius: 30px;
+                    background: #FFF;
+                    padding: 6px 18px;
+                    gap: 10px;
+
+
+                    &.border-plane {
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                    }
+
+                    input {
+                        border: none;
+                        height: fit-content;
+                        position: relative;
+                        bottom: 1px;
+                        width: 100%;
+                        padding: 0;
+                        text-decoration: none;
+                        outline: none;
+                    }
+                }
+
+                p {
+                    color: #121212;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    opacity: 0.7;
+                    margin-left: 14px;
+                }
+            }
+
+            .modal-body {
+                padding: 24px;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                overflow-y: scroll;
+
+                .modal-heading {
+                    color: #121212;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 0.004px;
+                    text-transform: capitalize;
+
+                }
+
+                .form-content {
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    grid-template-rows: repeat(10, 1fr);
+
+                    .input-field {
+                        padding: 6px 10px;
+                        margin-bottom: 16px;
+
+                        label {
+                            margin-left: 8px;
+                        }
+
+                        .form-check-input {
+                            border-color: #354ACB
+                        }
+                    }
+                }
+            }
+
+            .modal-footer {
+
+                button {
+                    border-radius: 24px;
+                    border: 2px solid #354ACB;
+                    background-color: #fff;
+                    color: #354ACB;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 16px;
+                    height: 80%;
+
+                    button {
+                        padding: 10px 20px;
+                    }
+
+                    &.close {
+                        &:hover {
+                            background: #fff;
+                        }
+                    }
+
+                    &.active {
+                        background-color: #354ACB;
+                        color: #fff;
+
+                        padding: 10px 24px;
+
+                    }
+                }
+
+
+            }
         }
     }
 }
@@ -1588,10 +1726,70 @@ ul {
         }
 
         .topology {
-            .nav-pills {}
+            .nav-pills {
+                width: 100%;
+                margin: 0;
+
+                .nav-item {
+                    width: 20%;
+
+
+                    .nav-link {
+                        position: relative;
+                        width: 100%;
+                        height: 100px;
+                        z-index: 5;
+                        border-radius: 0;
+                        transition: none;
+                        &.active{
+                            background-color: #354ACB;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                z-index: 7;
+                                background-color: #354ACB;
+                                width: 70px;
+                                height: 70px;
+                                transform: rotate(45deg);
+                                top: 14px;
+                                right: -35px;
+    
+                            }
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                z-index: 6;
+                                background-color: #fff;
+                                width: 70px;
+                                height: 70px;
+                                transform: rotate(45deg);
+                                top: 14px;
+                                left: -35px;
+                               
+    
+                            }
+                            :first-child{
+                                &::before{
+                                    background-color: #354ACB;
+                                }
+                            }
+                           
+                        }
+
+                       
+                    }
+
+                }
+
+            }
 
             #pills-tabContent {
+                position: relative;
+
                 .tab-pane {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
                     padding: 24px;
                     display: flex;
                     flex-direction: column;
@@ -1607,7 +1805,7 @@ ul {
                     }
 
                     .cards {
-                        .card{
+                        .card {
                             display: flex;
                             flex-direction: column;
                             gap: 24px;
@@ -1617,17 +1815,29 @@ ul {
                                 display: flex;
                                 justify-content: space-between;
                                 font-size: 18px;
+                                color: #121212;
+                                font-size: 18px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: normal;
+                                letter-spacing: 0.02px;
 
                             }
 
+                            .card-content {
+                                color: #121212;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 600;
+                                line-height: 23px;
+                                letter-spacing: 0.02px;
+                            }
+
                         }
+
                         .card1 {
                             border: 1px solid #EEE;
                             background: #FFF;
-
-                            
-
-
 
                             .list {
                                 display: flex;
@@ -1661,21 +1871,54 @@ ul {
 
                         }
 
+                        .col-5 {
+                            width: 39%;
+                        }
+
                         .card2 {
                             border: 1px solid #915FC8;
                             background: #F2ECF8;
+                            margin-left: 24px;
                         }
                     }
 
-                    .accordion {
-                        .accordian.header {}
+                    #accordionExample {
+
+
+                        .accordion-button {
+                            display: flex;
+                            height: 60px;
+                            padding: 16px 24px;
+                            justify-content: space-between;
+                            align-items: center;
+                            align-self: stretch;
+                            color: #333;
+                            font-size: 20px;
+                            font-style: normal;
+                            font-weight: 600;
+                            line-height: normal;
+                            background-color: rgba(53, 74, 203, 0.08);
+
+                            &:focus {
+                                background-color: rgba(53, 74, 203, 0.08);
+                                box-shadow: none;
+                            }
+
+                            &:not(.collapsed) {
+                                color: #333;
+                                background-color: rgba(53, 74, 203, 0.08);
+                                box-shadow: none;
+                            }
+                        }
 
                         .accordion-body {
+                            padding: 0;
+
                             .detailed-view-table {
-                                padding: 20px 20px 0;
+                                padding: 20px;
                                 flex-direction: column;
                                 gap: 1rem;
-                                background-color: #EEEEEE5e;
+                                background-color: #fff;
 
                                 #nav-map {
                                     position: relative;
@@ -1684,10 +1927,15 @@ ul {
                                     width: auto;
                                     gap: 0;
 
-                                    .search {
-                                        width: 35%;
-                                        box-shadow: none;
+                                    .end {
+                                        button {
+                                            border-radius: 7px;
+                                            border: 1px solid rgba(238, 238, 238, 0.93);
+                                            background: #FFF;
+                                        }
                                     }
+
+
 
                                     .detailed-view-table-filter-form {
                                         width: 100%;
@@ -1770,52 +2018,6 @@ ul {
                                     letter-spacing: 0.004px;
                                 }
 
-                                .download {
-                                    border-bottom: solid 1px #354ACB;
-
-
-
-                                    a {
-                                        border: none;
-                                        background: none;
-                                        color: #354ACB;
-                                        text-decoration: none;
-                                        padding-left: 0;
-                                        padding-right: 0;
-                                        padding-bottom: 3px;
-                                    }
-
-                                    .dropdown-menu {
-                                        top: 32px;
-                                        right: 0;
-
-                                        .dropdown-item {
-                                            border-bottom: 1px solid #12121212;
-                                            background-color: #fff;
-                                            color: #121212;
-                                            padding: 10px;
-
-
-
-                                            &:hover,
-                                            &:focus {
-                                                background-color: #fff;
-                                                color: #121212;
-                                            }
-
-                                            &:last-child {
-                                                border-bottom: none;
-                                                border-top: solid 1px #121212;
-                                            }
-
-                                        }
-
-
-
-
-                                    }
-                                }
-
                                 .table {
                                     margin-bottom: 0;
 
@@ -1844,9 +2046,34 @@ ul {
                                         }
                                     }
 
+
+
+                                    .one {
+                                        border-radius: 4px;
+                                        border: 1px solid #91D5FF;
+                                        background: #E6F7FF;
+
+                                    }
+
+                                    .two {
+                                        border-radius: 4px;
+                                        border: 1px solid #915FC8;
+                                        background: #F2ECF8;
+                                    }
+
+                                    .three {
+                                        border-radius: 4px;
+                                        border: 1px solid #FDBF00;
+                                        background: var(--gold-1, #FFFBE6);
+                                    }
+
                                     td,
                                     th {
-                                        padding: 1rem .4rem;
+                                        padding: 1rem 1rem;
+
+                                        button {
+                                            margin: auto;
+                                        }
 
                                         &.file-name {
                                             width: 40%;
