@@ -750,8 +750,10 @@ ul {
             font-weight: 400;
             line-height: normal;
             border-bottom: 1px solid #354ACB;
-            a{
-                color: #354ACB;;
+
+            a {
+                color: #354ACB;
+                ;
                 text-decoration: none;
             }
         }
@@ -1095,6 +1097,8 @@ ul {
                         background-color: #ffffff;
                         width: 299px;
                         height: 55px;
+                        position: relative;
+                        left: -15px;
 
                         .nav-item {
                             width: 30%;
@@ -1418,7 +1422,7 @@ ul {
 
                 .download {
                     border-bottom: solid 1px #354ACB;
-                   
+
 
 
                     a {
