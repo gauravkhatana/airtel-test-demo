@@ -89,6 +89,10 @@ export class AppComponent {
     this.activeButton = this.activeButton === buttonNumber ? 0 : buttonNumber;
   }
 
+  closeDropdown() {
+    this.activeButton = -1;
+  }
+
   fields = [
     { label: 'Node Name:' },
     { label: 'Alarm Type:' },
