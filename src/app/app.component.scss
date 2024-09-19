@@ -1961,6 +1961,7 @@ ul {
                     #accordionExample {
                         .accordion-item {
                             border-radius: 1rem;
+                            overflow: hidden;
 
 
 
@@ -1988,8 +1989,8 @@ ul {
                                     color: #333;
                                     background-color: rgba(53, 74, 203, 0.08);
                                     box-shadow: none;
-                                    border-bottom-left-radius: 0 !important;
-                                    border-bottom-right-radius: 0 !important;
+                                    border-bottom-left-radius: 0 ;
+                                    border-bottom-right-radius: 0 ;
                                 }
                             }
 
