@@ -492,6 +492,7 @@
     .children,
     .acs .nav-tabs {
         width: calc(100vw - 80px);
+
     }
 
 
@@ -1150,6 +1151,7 @@ ul {
         margin-top: 60px;
         height: calc(100vh - 60px);
         overflow: scroll;
+        background: #FAFAFA;
 
 
 
@@ -1725,36 +1727,69 @@ ul {
             }
         }
 
+
         .topology {
+            background: #FAFAFA;
+
             .nav-pills {
                 width: 100%;
                 margin: 0;
+                overflow-y: hidden;
 
                 .nav-item {
                     width: 20%;
-
-
+                    background-color: #FFF;
+                    
+                    
+                    
+                    
                     .nav-link {
+                        color: rgba(32, 32, 32, 0.70);
+                        text-align: center;
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 600;
+                        line-height: 20px;
                         position: relative;
                         width: 100%;
                         height: 100px;
                         z-index: 5;
                         border-radius: 0;
                         transition: none;
-                        &.active{
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            z-index: 7;
+                            background-color: #fff;
+                            width: 74px;
+                            height: 74px;
+                            transform: rotate(45deg);
+                            top: 13px;
+                            right: -40px;
+                            border-top: 5px solid #FAFAFA;
+                            border-right: 5px solid #FAFAFA;
+
+                        }
+
+                        &.active {
                             background-color: #354ACB;
-                            &::after {
-                                content: "";
-                                position: absolute;
-                                z-index: 7;
-                                background-color: #354ACB;
-                                width: 70px;
-                                height: 70px;
-                                transform: rotate(45deg);
-                                top: 14px;
-                                right: -35px;
-    
+                            color: #fff;
+
+                            svg{
+                                filter: brightness(100);
+                                path{
+                                    fill-opacity: 1;
+                                }
                             }
+
+                            &::after {
+                                background-color: #354ACB;
+                                border-top: 4px solid #FAFAFA;
+                                border-right: 4px solid #FAFAFA;
+
+                            }
+
                             &::before {
                                 content: "";
                                 position: absolute;
@@ -1765,26 +1800,29 @@ ul {
                                 transform: rotate(45deg);
                                 top: 14px;
                                 left: -35px;
-                               
-    
+
+
                             }
-                            :first-child{
-                                &::before{
+
+                        }
+                    }
+
+                    &:first-child {
+                        .nav-link {
+                            &.active {
+                                &::before {
                                     background-color: #354ACB;
                                 }
                             }
-                           
                         }
-
-                       
                     }
-
                 }
 
             }
 
             #pills-tabContent {
                 position: relative;
+                background: #FAFAFA;
 
                 .tab-pane {
                     position: absolute;
@@ -1794,6 +1832,7 @@ ul {
                     display: flex;
                     flex-direction: column;
                     gap: 16px;
+                    background: #FAFAFA;
 
                     .tab-heading {
                         color: #121212;
